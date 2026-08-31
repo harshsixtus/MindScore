@@ -1,4 +1,4 @@
-const API_URL = "https://mindscore-1.onrender.com";
+const API_URL = "https://mindscore-1.onrender.com/predict";
 
 const countries = [
   "India", "USA", "Canada", "Australia", "UK", "Germany", "Mexico", "Turkey", "France",
