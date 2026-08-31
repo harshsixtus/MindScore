@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/predict";
+const API_URL = "https://harshweb-fzop.onrender.com";
 
 const countries = [
   "India", "USA", "Canada", "Australia", "UK", "Germany", "Mexico", "Turkey", "France",
