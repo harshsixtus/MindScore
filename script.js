@@ -1,4 +1,4 @@
-const API_URL = "https://mindscore-mgcq.onrender.com";
+const API_URL = "http://localhost:8000/predict";
 
 const countries = [
   "India", "USA", "Canada", "Australia", "UK", "Germany", "Mexico", "Turkey", "France",
