@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mindscore — Mental Health Estimate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <button class="brand" id="homeBtn" aria-label="Go home">mindscore</button>
+    <span class="header-link">Assessment</span>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="screen home-screen active">
+      <div class="hero">
+        <p class="eyebrow">A simple reflection on your daily habits</p>
+        <h1>Understand your<br><span>digital habits.</span></h1>
+        <p class="hero-copy">Estimate how your daily habits may influence your mental health score.</p>
+        <button class="primary-btn" id="startBtn">Start Assessment <span>→</span></button>
+        <p class="meta">12 inputs · ~30 seconds · AI-powered prediction</p>
+      </div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section id="assessment" class="screen assessment-screen">
+      <div class="assessment-wrap">
+        <div class="progress-meta">
+          <span id="stepLabel">01 / 12</span>
+          <span id="progressPercent">8%</span>
+        </div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+
+        <form id="assessmentForm" novalidate>
+          <div id="questionArea"></div>
+
+          <div class="form-nav">
+            <button type="button" class="text-btn back-btn" id="backBtn">← Back</button>
+            <button type="button" class="primary-btn continue-btn" id="continueBtn">Continue <span>→</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- LOADING -->
+    <section id="loading" class="screen loading-screen">
+      <div class="loading-content">
+        <div class="loading-line"><span></span></div>
+        <p>Analyzing your responses<span class="dots">...</span></p>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="screen result-screen">
+      <div class="result-wrap">
+        <p class="eyebrow">Assessment complete</p>
+        <h2>Your estimated mental<br>health score</h2>
+
+        <div class="score-orbit">
+          <div class="score-circle">
+            <svg viewBox="0 0 220 220" aria-hidden="true">
+              <circle class="circle-bg" cx="110" cy="110" r="96"></circle>
+              <circle id="scoreRing" class="circle-progress" cx="110" cy="110" r="96"></circle>
+            </svg>
+            <div class="score-center">
+              <strong id="scoreValue">0.00</strong>
+              <span>/ 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category" id="scoreCategory">Good</div>
+        <p class="interpretation" id="interpretation"></p>
+        <p class="disclaimer">This is an estimated score based on the information you provided and is not a medical diagnosis or professional mental-health assessment.</p>
+
+        <div class="scale">
+          <div class="scale-line"><span id="scaleMarker"></span></div>
+          <div class="scale-labels"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10</span></div>
+        </div>
+
+        <div class="responses">
+          <div class="section-heading">
+            <span>Your responses</span>
+            <span class="line"></span>
+          </div>
+          <div id="responseGrid" class="response-grid"></div>
+        </div>
+
+        <div class="result-actions">
+          <button class="primary-btn" id="againBtn">Take Assessment Again</button>
+          <button class="secondary-btn" id="resultHomeBtn">Back to Home</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERROR -->
+    <section id="error" class="screen error-screen">
+      <div class="error-content">
+        <p class="eyebrow">Something went wrong</p>
+        <h2>We couldn't complete<br>your assessment.</h2>
+        <p>Please check that your FastAPI server is running and try again.</p>
+        <button class="primary-btn" id="retryBtn">Retry <span>↻</span></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
